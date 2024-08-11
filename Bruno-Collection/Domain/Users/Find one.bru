@@ -5,15 +5,15 @@ meta {
 }
 
 get {
-  url: http://localhost:3000/users/1
+  url: http://localhost:3000/users/0
   body: none
   auth: none
 }
 
-script:pre-request {
-  // Check if the status code is 200 (OK)
-  test("Status code is 200", function () {
-      response.to.have.status(200);
+tests {
+  // Check if the status code is 400 (OK)
+  test("Status code is 400", function () {
+      response.to.have.status(400);
   });
   
   // Check if the response has the Content-Type header set to JSON
@@ -24,7 +24,7 @@ script:pre-request {
   
   // Check if the response contains a user object with the specified ID
   test("Response contains a user object", function () {
-      var jsonData = response.json();
+      let jsonData = response.json();
       expect(jsonData).to.have.property("id");
       expect(jsonData).to.have.property("fname");
       expect(jsonData).to.have.property("lname");

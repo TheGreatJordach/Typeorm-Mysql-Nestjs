@@ -12,16 +12,16 @@ post {
 
 body:json {
   {
-    "fname":"Jordach",
-    "lname":"Makaya",
+    "firstName":"Jordach",
+    "lastName":"Makaya",
     "email":"jm@me.com",
-    "phone":"222222222",
-    "password": "male",
-    "nothere": "mljldjlqf"
+    "phone":"0629955844",
+    "password": "male"
+    
   }
 }
 
-script:pre-request {
+tests {
   // Check if the status code is 201 (Created)
   test("Status code is 201", function () {
       response.to.have.status(201);

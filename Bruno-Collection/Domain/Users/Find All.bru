@@ -10,7 +10,7 @@ get {
   auth: none
 }
 
-script:pre-request {
+tests {
   // Check if the status code is 200 (OK)
   test("Status code is 200", function () {
       response.to.have.status(200);
