@@ -9,3 +9,16 @@ delete {
   body: none
   auth: none
 }
+
+script:pre-request {
+  // Check if the status code is 200 (OK) or 204 (No Content)
+  test("Status code is 200 or 204", function () {
+      response.to.have.status(200).or.have.status(204);
+  });
+  
+  // Check if the response has no content
+  test("Response has no content", function () {
+      expect(response.body).to.be.empty;
+  });
+  
+}

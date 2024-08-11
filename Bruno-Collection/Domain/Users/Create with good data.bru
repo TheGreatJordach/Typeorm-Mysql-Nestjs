@@ -1,0 +1,46 @@
+meta {
+  name: Create with good data
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:3000/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "fname":"Jordach",
+    "lname":"Makaya",
+    "email":"jm@me.com",
+    "phone":"222222222",
+    "password": "male",
+    "nothere": "mljldjlqf"
+  }
+}
+
+script:pre-request {
+  // Check if the status code is 201 (Created)
+  test("Status code is 201", function () {
+      response.to.have.status(201);
+  });
+  
+  // Check if the response has the Content-Type header set to JSON
+  test("Response has JSON data", function () {
+      response.to.have.header("Content-Type", /json/);
+      response.to.be.json;
+  });
+  
+  // Check if the response contains the correct user data
+  test("Response contains user data", function () {
+      let jsonData = response.json();
+      expect(jsonData).to.have.property("id");
+      expect(jsonData).to.have.property("fname", "Jordach");
+      expect(jsonData).to.have.property("lname", "Makaya");
+      expect(jsonData).to.have.property("email", "jm@me.com");
+      expect(jsonData).to.have.property("phone", "222222222");
+  });
+  
+}

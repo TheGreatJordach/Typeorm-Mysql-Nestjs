@@ -9,3 +9,27 @@ get {
   body: none
   auth: none
 }
+
+script:pre-request {
+  // Check if the status code is 200 (OK)
+  test("Status code is 200", function () {
+      response.to.have.status(200);
+  });
+  
+  // Check if the response has the Content-Type header set to JSON
+  test("Response has JSON data", function () {
+      response.to.have.header("Content-Type", /json/);
+      response.to.be.json;
+  });
+  
+  // Check if the response contains a user object with the specified ID
+  test("Response contains a user object", function () {
+      var jsonData = response.json();
+      expect(jsonData).to.have.property("id");
+      expect(jsonData).to.have.property("fname");
+      expect(jsonData).to.have.property("lname");
+      expect(jsonData).to.have.property("email");
+      expect(jsonData).to.have.property("phone");
+  });
+  
+}

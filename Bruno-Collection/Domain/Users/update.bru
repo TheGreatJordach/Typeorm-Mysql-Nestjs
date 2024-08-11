@@ -12,11 +12,29 @@ patch {
 
 body:json {
   {
-    "fname":"Jordach",
-    "lname":"Makaya",
-    "email":"jm@me.com",
-    "phone":"222222222",
-    "password": "male",
-    "nothere": "mljldjlqf"
+    "fname": "John",
+    "lname": "Doe"
   }
+  
+}
+
+script:pre-request {
+  // Check if the status code is 200 (OK)
+  test("Status code is 200", function () {
+      response.to.have.status(200);
+  });
+  
+  // Check if the response has the Content-Type header set to JSON
+  test("Response has JSON data", function () {
+      response.to.have.header("Content-Type", /json/);
+      response.to.be.json;
+  });
+  
+  // Check if the response contains the updated user data
+  test("Response contains updated user data", function () {
+      var jsonData = response.json();
+      expect(jsonData).to.have.property("fname", "John");
+      expect(jsonData).to.have.property("lname", "Doe");
+  });
+  
 }
