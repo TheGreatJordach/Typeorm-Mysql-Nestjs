@@ -11,7 +11,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: 'Typscript@@2026',
       database: 'Login-Users',
       autoLoadEntities: true,
-      logging: false,
+      logging: true,
     }),
   ],
 })
