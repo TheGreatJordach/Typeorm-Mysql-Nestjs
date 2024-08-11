@@ -1,0 +1,9 @@
+services:
+  database:
+    image: mysql:5.7
+    container_name: mysql-SpaceX
+    env_file:
+      - ".env.local"
+    ports:
+      - "3309:3306"
+

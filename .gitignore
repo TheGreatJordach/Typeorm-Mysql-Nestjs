@@ -1,4 +1,6 @@
 # compiled output
+/data
+.env.local
 /dist
 /node_modules
 /build
