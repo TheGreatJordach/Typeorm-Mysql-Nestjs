@@ -1,5 +1,7 @@
+
+  <img src="public/assets/images/logo-no-background.svg" width="500" alt="Nest Logo" /> 
+<br>
 <p align="center">
-  <img src="public/assets/images/logo-no-background.svg" width="500" alt="Nest Logo" />
    <img src="public/assets/images/typeorm.png" width="200" alt="Nest Logo" />
    <img src="public/assets/images/nestjs.png" width="100" alt="Nest Logo" />
    <img src="public/assets/images/docker.png" width="100" alt="Nest Logo" />
