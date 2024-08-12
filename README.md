@@ -8,6 +8,9 @@
    <img src="public/assets/images/docker.png" width="100" alt="Nest Logo" />
 
 </p>
+<br>
+<a href="https://wakatime.com/badge/user/018ebde5-003c-47c2-8ab0-3530226c609b/project/5cb73781-8896-46ba-b9bc-7e36a3354bbf"><img src="https://wakatime.com/badge/user/018ebde5-003c-47c2-8ab0-3530226c609b/project/5cb73781-8896-46ba-b9bc-7e36a3354bbf.svg" alt="wakatime"></a>
+
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
